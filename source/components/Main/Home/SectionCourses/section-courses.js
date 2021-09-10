@@ -19,6 +19,14 @@ const SectionCourses = (props) => {
             level: 'Beginner',
             released: 'December 8, 2021', 
             duration: '30 hours'
+        },
+        {
+            id: 3, 
+            title: 'android',
+            author: 'Thuc Trieu Dep Trai',
+            level: 'Beginner',
+            released: 'December 8, 2021', 
+            duration: '30 hours'
         }
     ]
 
@@ -28,7 +36,7 @@ const SectionCourses = (props) => {
 
     return <View>
         <View>
-            <Text>{props.title}</Text>
+            <Text style = {{marginLeft: 10, fontSize: 20}}>{props.title}</Text>
         </View>
         <ScrollView horizontal = {true}>
             {renderListItems()}
