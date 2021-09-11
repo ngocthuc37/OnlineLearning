@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, FlatList } from 'react-native';
+import {View, FlatList, TextInput, Button} from 'react-native';
 import ListCoursesItems from '../ListCoursesItems/list-courses-items'
 
 
@@ -31,11 +31,19 @@ const ListCourses = (props) => {
     }
     ]
 
-
+    const searchView = () => { 
+        return <View style = {{flexDirection: 'row'}}>
+            <TextInput style={{flex: 1, borderWidth: 1, borderColor: 'grey', textAlign: 'center'}} placeholder="Search text" />
+            <Button onPress ={()=> {
+                console.log('Search')
+            }} title = 'Search' style ={{width: 60, height: 40}}/>
+        </View>
+    }
     return <View>
         <FlatList
             data = {courses}
             renderItem = {({item}) => <ListCoursesItems item={item} />}
+            ListHeaderComponent={()=> searchView()}
             />
     </View>
 
