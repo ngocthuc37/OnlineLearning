@@ -3,7 +3,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './source/components/Main/Home/home'
 import ListCourses from './source/components/Courses/ListCourses/list-courses'
-import SplashScreen from './source/components/SplashScreen/splash-screen';
+import SplashScreen from './source/components/SplashScreen/splash-screen'
+import SignIn from './source/components/Authentication/SignIn/sign-in'
 
 export default function App() {
   return (
@@ -13,7 +14,11 @@ export default function App() {
       {/* <Home/> */}
       
       {/* <ListCourses /> */}
-      <SplashScreen/>
+      
+      {/* <SplashScreen/> */}
+
+      <SignIn/>
+      
     </View>
   );
 }
