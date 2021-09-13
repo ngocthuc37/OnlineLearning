@@ -1,8 +1,8 @@
 import React from 'react';
 import {  View,  Text, TouchableOpacity, Dimensions, StyleSheet, StatusBar, Image} from 'react-native';
-
+import * as Animatable from 'react-native-animatable';
 import {LinearGradient} from 'expo-linear-gradient';
-
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
 const SplashScreen = () => {
@@ -10,7 +10,8 @@ const SplashScreen = () => {
     return (
       <View style={styles.container}>
           <View style ={styles.header}>
-              <Image 
+              <Animatable.Image 
+                animation = "tada"
                 source={require('../../../assets/logo.png')}
                 style = {styles.logo}
                 resizeMode = "stretch"
@@ -26,6 +27,11 @@ const SplashScreen = () => {
                          style = {styles.signIn}
                     >
                         <Text style = {styles.textSign}>Get Started</Text>
+                        <MaterialIcons
+                            name = "navigate-next"
+                            color = "white"
+                            size = {20}
+                        />
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
