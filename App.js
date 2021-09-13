@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './source/components/Main/Home/home'
 import ListCourses from './source/components/Courses/ListCourses/list-courses'
+import SplashScreen from './source/components/SplashScreen/splash-screen';
 
 export default function App() {
   return (
@@ -11,8 +12,8 @@ export default function App() {
       
       {/* <Home/> */}
       
-      <ListCourses />
-
+      {/* <ListCourses /> */}
+      <SplashScreen/>
     </View>
   );
 }

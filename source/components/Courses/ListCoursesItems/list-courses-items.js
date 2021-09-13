@@ -1,16 +1,20 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image } from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
 
 
 const ListCoursesItems = (props) => { 
-    return <View style = {styles.item}>
+    return <TouchableOpacity style = {styles.item}
+                            onPress={() => {
+                                console.log('Press')
+                            }}
+            >
         <Image style={styles.image} source ={require('../../../../assets/c.png')} /> 
         <View style = {{marginTop: 5}}>
             <Text>{props.item.title}</Text>
             <Text style ={styles.darkText} > {props.item.author}</Text>
             <Text style ={styles.darkText} > {`${props.item.level}. ${props.item.released} . ${props.item.duration}`}</Text>
         </View>
-    </View>
+    </TouchableOpacity>
 }
 
 const styles = StyleSheet.create({
