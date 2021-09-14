@@ -13,7 +13,13 @@ const SignIn = () => {
 
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor='#009387' barStyle = 'light-content' />
+            <View>
+                <StatusBar 
+                    backgroundColor='#009387' 
+                    barStyle = "light-content"
+                    translucent = {true} 
+                />
+            </View>
             <View style={styles.header}>
                 <Text style={styles.text_header}>Welcome to Courses!</Text>
             </View>
@@ -99,7 +105,8 @@ const SignIn = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1, 
-      backgroundColor: '#009387'
+      backgroundColor: '#009387',
+      height: Dimensions.get('window').height
     },
     header: {
         flex: 0.8,
