@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {View, TextInput, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Platform} from 'react-native'
+import {View, TextInput, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Platform, StatusBar} from 'react-native'
 
 import * as Animatable from 'react-native-animatable';
 import {LinearGradient} from 'expo-linear-gradient';
@@ -13,6 +13,7 @@ const SignIn = () => {
 
     return (
         <View style={styles.container}>
+            <StatusBar backgroundColor='#009387' barStyle = 'light-content' />
             <View style={styles.header}>
                 <Text style={styles.text_header}>Welcome to Courses!</Text>
             </View>
@@ -54,13 +55,41 @@ const SignIn = () => {
                         size = {20}
                     />
                 </View>
+                <View style ={styles.forgot}>
+                    <Text style={styles.textForgot}>Forgot Password?</Text>
+                </View>
                 <View style={styles.button}>
-                    <LinearGradient
-                        colors = {['#08d4c4', '#01ab9d']}
-                        style = {styles.signIn}
+                    <LinearGradient 
+                         colors = {['#08d4c4', '#01ab9d']}
+                         style = {styles.signIn}
                     >
-                        <Text style={styles.textSign}>Sign In</Text>
+                        <Text style = {[styles.textSign, {color: 'white'}]}>Sign In</Text> 
                     </LinearGradient>
+
+                    <TouchableOpacity 
+                         style = {[styles.signIn, {
+                            marginTop: 15,
+                            borderWidth: 1,
+                            borderColor: '#009387'
+                         }]}
+                    >
+                        <Text style = {[styles.textSign, {color: '#009387'}]}>Sign Up</Text> 
+                    </TouchableOpacity>
+                </View>   
+                <View style ={styles.continueSign}>
+                    <Text style={{color: 'grey', fontSize: 15}}>Or continue with</Text>
+                </View>    
+                <View style = {styles.loginWith}>
+                    <Image 
+                        source = {require('../../../../assets/fb.png')}
+                        style = {styles.logoFacebook}    
+                        resizeMode =  'stretch'
+                    /> 
+                    <Image 
+                        source = {require('../../../../assets/google.png')}
+                        style = {styles.logoGoogle}    
+                        resizeMode =  'stretch'
+                    />
                 </View>
             </View>
         </View>
@@ -73,10 +102,11 @@ const styles = StyleSheet.create({
       backgroundColor: '#009387'
     },
     header: {
-        flex: 1,
+        flex: 0.8,
         justifyContent: 'flex-end',
         paddingBottom: 50,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        backgroundColor: '#009387'
     },
     footer: {
         flex: 3,
@@ -95,17 +125,17 @@ const styles = StyleSheet.create({
     },
     textInput: {
         flex: 1,
-        fontSize: 20,
+        fontSize: 18,
         marginTop: Platform.OS === 'ios' ? 0 : -5,
         color: '#05375a',
         paddingLeft: 10
     },
     button: {
         alignItems: 'center',
-        marginTop: 50
+        marginTop: 20
     },
     signIn: {
-        width: "100",
+        width: '100%',
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
@@ -113,16 +143,49 @@ const styles = StyleSheet.create({
     },
     textSign: {
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
     },
     text_footer: {
         color: '#05375a',
-        fontSize: 18
+        fontSize: 18,
+       
     },
     text_header: {
         color: 'white',
         fontWeight: 'bold',
         fontSize: 30
+    },
+    textForgot: { 
+        fontSize: 18, 
+        color: '#009387',
+      
+    },
+    forgot: { 
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        marginTop: 10,
+        marginLeft: 10,
+    },
+    continueSign: { 
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: 10,
+        marginLeft: 10,
+    },
+    loginWith:{
+        marginTop: 15,
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    logoGoogle: { 
+        width: 40,
+        height: 40,
+        marginLeft: 10,
+        marginTop: 5,
+    },
+    logoFacebook: { 
+        width: 50,
+        height: 50
     }
   });
 
