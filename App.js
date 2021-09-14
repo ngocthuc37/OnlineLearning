@@ -5,6 +5,7 @@ import Home from './source/components/Main/Home/home'
 import ListCourses from './source/components/Courses/ListCourses/list-courses'
 import SplashScreen from './source/components/SplashScreen/splash-screen'
 import SignIn from './source/components/Authentication/SignIn/sign-in'
+import SignUp from './source/components/Authentication/SignUp/sign-up';
 
 export default function App() {
   return (
@@ -17,7 +18,9 @@ export default function App() {
       
       {/* <SplashScreen/> */}
 
-      <SignIn/>
+      {/* <SignIn/> */}
+
+      <SignUp/>
       
     </View>
   );
