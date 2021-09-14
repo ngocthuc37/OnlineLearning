@@ -1,4 +1,4 @@
 # OnlineLearning
-An online learning app like udemy
+An online learning app like lettutor by React Native 
 
 
